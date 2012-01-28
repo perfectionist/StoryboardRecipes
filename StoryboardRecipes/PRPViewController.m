@@ -1,8 +1,8 @@
 //
 //  PRPViewController.m
-//  StoryboardRecipes
+//  Recipes
 //
-//  Created by David Loeffler on 1/27/12.
+//  Created by David Loeffler on 1/10/12.
 //  Copyright (c) 2012 e-tuitive. All rights reserved.
 //
 
@@ -14,21 +14,47 @@
 
 @implementation PRPViewController
 
+@synthesize recipeTitle = _recipeTitle;
+@synthesize directionsView = _directionsView;
+@synthesize imageView = _imageView;
+@synthesize prepTime = _prepTime;
+@synthesize formatter = _formatter;
+
+@synthesize recipe = _recipe;
+
+#pragma mark - Memory Management
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.formatter = [[NSNumberFormatter alloc] init];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    self.directionsView = nil;
+    self.recipeTitle = nil;
+    self.imageView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.recipeTitle.text = self.recipe.title;
+    self.directionsView.text = self.recipe.directions;
+    if(nil != self.recipe.image) {
+        self.imageView.image = self.recipe.image;
+    }
+    self.prepTime.text =[self.formatter stringFromNumber:self.recipe.preparationTime];
+}
+
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
