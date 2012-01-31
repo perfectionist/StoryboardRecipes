@@ -122,7 +122,6 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"commitEditingStyle");
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [self.dataSource deleteRecipeAtIndex:indexPath.row];
@@ -154,12 +153,10 @@
 #pragma mark - Segue methods
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"prepare for seque %@", segue.identifier);
     if ([@"presentRecipeDetail" isEqualToString:segue.identifier]) {
         NSIndexPath *index = [self.tableView indexPathForCell:sender];
         PRPRecipe *recipe = [self.dataSource recipeAtIndex:index.row];
         [[segue destinationViewController] setRecipe:recipe];
-        NSLog(@"moved to new view");
     }
 }
 
