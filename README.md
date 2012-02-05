@@ -12,7 +12,7 @@ Before I could edit the prototype cell attributes I had to change the number of 
 
 **Container controllers** define the interaction model of the content controllers they manage.  In this book they do not cover creating custom container controllers.  
 
-The segue that has a container controller is really a *container* seque.  So it is important to name segues and be sure you have the correct one by checking name.
+The segue that has a container controller is really a *container* seque.  So it is important to name segues and be sure you have the correct one by checking name.  When adding the Navigation Controller make sure the **Resize View From NIB** box is checked so the view is properly sized.
 
 ## Idioms ##
 
