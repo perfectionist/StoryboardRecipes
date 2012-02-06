@@ -63,9 +63,9 @@
         [localRecipes addObject:recipe];
 
         NSString *directions = @"Put the flour and other dry ingredients in a bowl, \
-        stir in the eggs until evenly moist. Add chocolate chips and stir in until even. \
-        Place tablespoon sized portions on greased cookie sheet and bake at 350Â° for \
-        6 minutes.";
+stir in the eggs until evenly moist. Add chocolate chips and stir in until even. \
+Place tablespoon sized portions on greased cookie sheet and bake at 350Â° for \
+6 minutes.";
         recipe = [[PRPRecipe alloc] init];
         recipe.title = @"Chocolate Chip Cookies";
         recipe.image = [UIImage imageNamed:@"IMG_1948.jpg"];

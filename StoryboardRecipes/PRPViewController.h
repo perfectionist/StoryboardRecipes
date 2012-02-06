@@ -10,8 +10,6 @@
 #import "PRPRecipe.h"
 
 @interface PRPViewController : UIViewController
-
-@property(nonatomic, strong) IBOutlet UILabel *recipeTitle;
 @property(nonatomic, strong) IBOutlet UITextView *directionsView;
 @property(nonatomic, strong) IBOutlet UIImageView *imageView;
 @property(nonatomic, strong) IBOutlet UILabel *prepTime;

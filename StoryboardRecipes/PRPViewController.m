@@ -14,7 +14,6 @@
 
 @implementation PRPViewController
 
-@synthesize recipeTitle = _recipeTitle;
 @synthesize directionsView = _directionsView;
 @synthesize imageView = _imageView;
 @synthesize prepTime = _prepTime;
@@ -33,9 +32,11 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    self.recipe = nil;
     self.directionsView = nil;
-    self.recipeTitle = nil;
     self.imageView = nil;
+    self.prepTime = nil;
+    self.formatter = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -45,16 +46,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.recipeTitle.text = self.recipe.title;
+    self.title = self.recipe.title;
     self.directionsView.text = self.recipe.directions;
     if(nil != self.recipe.image) {
         self.imageView.image = self.recipe.image;
     }
     self.prepTime.text =[self.formatter stringFromNumber:self.recipe.preparationTime];
-}
-
-- (IBAction)dismiss:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

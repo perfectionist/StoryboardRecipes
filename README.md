@@ -2,7 +2,7 @@
 
 A storyboard can be thought of as a collection of view controllers and their nib files. The neat thing about storyboards is the ease of editing the _flow_ of the application. The entire flow of our application can be specified in one storyboard and the storyboards take care of all the controllers and their relationships.
 
-Before I could edit the prototype cell attributes I had to change the number of prototype cells from 0 to 1 in table view attributes.  Nice the way the cell content is displayed.  Showed title, subtitle and image.
+**Note:** Before I could edit the prototype cell attributes I had to change the number of prototype cells from 0 to 1 in table view attributes.  Nice the way the cell content is displayed.  Showed title, subtitle and image.
 
 ## Container Controllers ##
 
@@ -13,6 +13,8 @@ Before I could edit the prototype cell attributes I had to change the number of 
 **Container controllers** define the interaction model of the content controllers they manage.  In this book they do not cover creating custom container controllers.  
 
 The segue that has a container controller is really a *container* seque.  So it is important to name segues and be sure you have the correct one by checking name.  When adding the Navigation Controller make sure the **Resize View From NIB** box is checked so the view is properly sized.
+
+After adding the navigation controller we want to make transitions move *sideways* so change from **modal** to **push**.  Also we now have a navigation bar at the top of the details view and a **back** button so we do not need the **Done** button and we can move the recipe title to the bar.
 
 ## Idioms ##
 
